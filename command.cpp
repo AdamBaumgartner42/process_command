@@ -68,8 +68,16 @@ int main () {
   ifstream filestream("/proc/" + std::to_string(pid) + "/cmdline");
   string line;
   getline(filestream, line);
-  cout << line << "\n";
-  cout << line.substr(0, 50) << "\n";
-  cout << line.substr(0, 50).c_str() << "\n";
+ 
+  cout << "line: " << line << "\n";
+  cout << "length:" << line.length() << "\n";
+
+  cout << "line(char): ";
+  for (char c : line){
+    cout << c << "|";
+  }
+  cout << "\n";
+
+  cout <<"line.c_str(): " << line.c_str() << "\n";
   return 0;
 }
