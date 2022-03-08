@@ -64,13 +64,15 @@ string LinuxParser::Command(int pid) {
 
 // Demonstration of the problem
 int main () {
+
   int pid = 1;
   ifstream filestream("/proc/" + std::to_string(pid) + "/cmdline");
   string line;
   getline(filestream, line);
- 
+  cout << "\n";
   cout << "line: " << line << "\n";
   cout << "length:" << line.length() << "\n";
+  cout << "\n";
 
   cout << "line(char): ";
   for (char c : line){
@@ -79,5 +81,10 @@ int main () {
   cout << "\n";
 
   cout <<"line.c_str(): " << line.c_str() << "\n";
+  cout << "\n";
+
+  printf("printf(): %s", line.c_str());
+  cout << "\n";
+  cout << "\n";
   return 0;
 }
