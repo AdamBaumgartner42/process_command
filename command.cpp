@@ -76,7 +76,11 @@ int main () {
 
   cout << "line(char): ";
   for (char c : line){
-    cout << c << "|";
+    if (c == '\0'){
+      cout << "*" << c << "|";
+    } else {
+      cout << c << "|";
+    }
   }
   cout << "\n";
 
